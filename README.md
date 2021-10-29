@@ -33,4 +33,17 @@ will be all written in JavaScript and will use Vanilla Javascript to implement H
 I will also be using Sprite libraries for models of characters and objects.
 
 Implementation Timeline:
-Friday Afternoon & Weekend
+Friday Afternoon & Weekend: On Friday I need to look more into what it takes to 
+build out the logic of the game, and I hope to at least have a rendered board by
+then end of the day. Over the weekend I am hoping to get moving objects and a base
+character.
+
+Monday: I want to be able to move my characater by the end of the day monday which
+takes a lot of logic to back it up.
+
+Tuesday: I want to have my initial levels and maybe a few more levels pastthat figured 
+out.
+
+Wednesday: I want to work on character models and make sure everything is looking nice.
+
+Thursday: I want to fine tune anything that might need fixing. 
