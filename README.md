@@ -29,7 +29,7 @@ In addition, this project will include:
 
 Wireframes:
 
-<img src="https://github.com/alexlolas/Crossroads-Project/blob/main/WireFrames.png" width="200">
+<img src="https://github.com/alexlolas/Crossroads-Project/blob/main/WireFrames.png" width="350">
 
 Tehcnologies:
 I will be mostly using the canvas API to render my game, other than that the code
