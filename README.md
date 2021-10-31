@@ -27,6 +27,10 @@ In addition, this project will include:
 - A display showing the amount of lives they have left.
 - A pannel to restart, pause the game, and quit the game.
 
+Wireframes:
+
+<img src="https://github.com/alexlolas/Crossroads-Project/blob/main/WireFrames.png" width="450">
+
 Tehcnologies:
 I will be mostly using the canvas API to render my game, other than that the code
 will be all written in JavaScript and will use Vanilla Javascript to implement HTML.
