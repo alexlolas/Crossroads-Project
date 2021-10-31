@@ -1,0 +1,6 @@
+class BoardView {
+  constructor (context) {
+
+  }
+  
+}
