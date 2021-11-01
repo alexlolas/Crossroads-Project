@@ -5,11 +5,11 @@ import Player from "./player.js"
 // document.addEventListener("DOMContentLoaded", () => {
   
 
-const canvas = document.getElementById("game-canvas");
+const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext('2d');
   //  const newBoard = new BoardView(canvas, ctx)
-  const newPlayer = new Player({})
- 
+  
+  const newPlayer = new Player()
   
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
@@ -29,25 +29,12 @@ const canvas = document.getElementById("game-canvas");
   })
 
 
-const moves = {
-  w: [0, -3],
-  a: [-3, 0],
-  s: [0, 3],
-  d: [3, 0],
-  
-};
+
 
 document.addEventListener('keydown', (e) => {
-  console.log(newPlayer.pos)
-  console.log(e.key)
-  let dir = moves[e.key]
-  console.log(dir)
-  let newX = newPlayer.pos[0] += dir[0]
-  let newY = newPlayer.pos[1] += dir[1]
-  newPlayer.delete
-  newPlayer.pos = [newX, newY]
-  newPlayer.draw(ctx)
-
+  let dir = newPlayer.moves[e.key]
+  newPlayer.pos[0] += dir[0]
+  newPlayer.pos[1] += dir[1]
 })
 
 // document.addEventListener('keyup', (e) => {
@@ -59,8 +46,8 @@ document.addEventListener('keydown', (e) => {
 function clearOld () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   ctx.fillStyle = 'white'
-  ctx.fillRect(370, 44, 700, 701)
-  newPlayer.draw(ctx)
+  ctx.fillRect((canvas.width - 700)/2, (canvas.height - 701) / 2, 700, 701)
+  newPlayer.draw(ctx, 'red')
   requestAnimationFrame(clearOld)
 }
 clearOld()
