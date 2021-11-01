@@ -2,8 +2,8 @@
 const DEFAULTS = {
     color: "red",
     radius: 6,
-    pos: [100, 50],
-    vel: [0, 0]
+    pos: [720, 722],
+    vel: [1, 1]
   }
 export default class Player {
   
