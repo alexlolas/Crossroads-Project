@@ -1,9 +1,10 @@
 
+
 const DEFAULTS = {
     color: "red",
     radius: 6,
     pos: [720, 722],
-    vel: [1, 1]
+    vel: [0, 0]
   }
 export default class Player {
   
@@ -27,6 +28,10 @@ export default class Player {
       );
       ctx.fill();
     }
+
+
+  
+
   }
   
   

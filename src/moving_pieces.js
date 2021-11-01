@@ -5,8 +5,13 @@
 // need to set negative and positive Xs so they can move both left and rihgt
 
 
-export default class MovingPieces {
-  constructor () {
+// export default class MovingPieces {
+//   // initiaializng an object which we can chagne within piece classes
+//   export constructor (movingObject) {
+//     this.pos = movingObject['pos'];
+//     this.vel = movingObject['vel'];
+//     this.radius = movingObject['radius'];
+//     this.color = movingObject['color'];
 
-  }
-}
+//   }
+// }
