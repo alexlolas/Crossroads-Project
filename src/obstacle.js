@@ -20,18 +20,24 @@ export default class Obstacle {
   //   this.obstacleArr = []
   // }
 
-  constructor(x, y, width, height, speed, canvas2) {
-
-    this.x = x;
+  constructor(x, y, width, height, speed, vel) {
     this.y = y
+    this.x = x;
     this.width = width
     this.height = height
     this.speed = speed
-    this.obstacleArr = []
+    this.vel = vel
   }
 
-  moveObject () {
+  moveObject (canvas) {
     this.x += this.vel * this.speed
+    console.log(this.x)
+    if (this.speed > 0) {
+    if (this.x > canvas.width + this.width) {
+      this.x = 0 - this.width
+    }
+  }
+    
   }
 
   draw(ctx2) {
@@ -41,18 +47,23 @@ export default class Obstacle {
   }
 
   obstacles(canvas2){
-    for (let i = 0; i < 2; i++) {
-      let x = i * 350
-      this.obstacleArr.push(new Obstacle(x, canvas2.height - 50 * 2 - 20, 50, 50, 1)) 
-
+    let arrs = []
+   for (let i = 0; i < 2; i++) {
+      let x = i * 350;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 50 * 2 - 20, 50, 50, 2, 1))
+      
       
     }
+    
+    return arrs
   }
 
-  handleObstacles(ctx2) {
-    for (let i = 0; i < this.obstacleArr.length; i++) {
-      this.obstacleArr[i].moveObject()
-      this.obstacleArr[i].draw(ctx2)
+
+
+  handleObstacles(arr, ctx2, canvas) {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i].moveObject(canvas)
+      arr[i].draw(ctx2)
     }
   }
   
