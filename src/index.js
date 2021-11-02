@@ -2,30 +2,31 @@ import Player from "./player.js"
 // import BoardView from "./board_view.js"
 //webpack --watch --mode=development
 // make sure this works and then try to condense code after
-// document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   
-
-const canvas = document.getElementById("canvas1");
-  const ctx = canvas.getContext('2d');
+const canvas1 = document.getElementById("canvas1");
+  const ctx = canvas1.getContext('2d');
   //  const newBoard = new BoardView(canvas, ctx)
-  
-  const newPlayer = new Player()
-  
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
+  const canvas2 = document.getElementById("canvas2");
+  const ctx2 = canvas2.getContext('2d');
+  const newPlayer = new Player(canvas2)
+  canvas1.width = window.innerWidth
+  canvas1.height = window.innerHeight
 
-  ctx.fillStyle = 'white'
-  ctx.fillRect(370, 44, 700, 701)
-  newPlayer.draw(ctx)
+  newPlayer.draw(ctx2)
+// console.log(canvas2)
+  ctx2.fillStyle = 'white'
+  
+  ctx2.fillRect(canvas2.width, canvas2.height, 700, 700 )
 
 
 
   window.addEventListener('resize', function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.fillStyle = 'white'
-    ctx.fillRect(370, 44, 700, 701)
-    newPlayer.draw(ctx)
+    canvas1.width = window.innerWidth
+    canvas1.height = window.innerHeight
+    ctx2.fillStyle = 'white'
+    ctx2.fillRect(canvas2.width, canvas2.height, 700, 700)
+    newPlayer.draw(ctx2)
   })
 
 
@@ -33,8 +34,9 @@ const canvas = document.getElementById("canvas1");
 
 document.addEventListener('keydown', (e) => {
   let dir = newPlayer.moves[e.key]
-  newPlayer.pos[0] += dir[0]
-  newPlayer.pos[1] += dir[1]
+  console.log(dir)
+  newPlayer.x += dir[0]
+  newPlayer.y += dir[1]
 })
 
 // document.addEventListener('keyup', (e) => {
@@ -44,17 +46,17 @@ document.addEventListener('keydown', (e) => {
 // })
 
 function clearOld () {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  ctx.fillStyle = 'white'
-  ctx.fillRect((canvas.width - 700)/2, (canvas.height - 701) / 2, 700, 701)
-  newPlayer.draw(ctx, 'red')
+  ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
+  ctx2.fillStyle = 'white'
+  ctx2.fillRect(canvas2.width, canvas2.height, 700, 700)
+  newPlayer.draw(ctx2)
   requestAnimationFrame(clearOld)
 }
 clearOld()
 
 
 
-// })
+})
 
 
 

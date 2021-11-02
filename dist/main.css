@@ -10,3 +10,19 @@
   left: 0;
 }
 
+.wrap {
+  border: 5px solid blue;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+}
+
+#canvas2 {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
