@@ -43,7 +43,7 @@ function clearOld () {
   newGame.player.draw(ctx2)
   // obstacles(arr, canvas2)
   // console.log(newGame.arr)
-  newGame.obstacleInt.handleObstacles(newGame.values, ctx2, canvas2)
+  newGame.handleObstacles(newGame.values, ctx2, canvas2)
   requestAnimationFrame(clearOld)
 }
 clearOld()

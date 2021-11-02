@@ -98,12 +98,12 @@ export default class Obstacle {
 
 
 
-  handleObstacles(arr, ctx2, canvas) {
-    for (let i = 0; i < arr.length; i++) {
-      arr[i].moveObject(canvas)
-      arr[i].draw(ctx2)
-    }
-  }
+  // handleObstacles(arr, ctx2, canvas) {
+  //   for (let i = 0; i < arr.length; i++) {
+  //     arr[i].moveObject(canvas)
+  //     arr[i].draw(ctx2)
+  //   }
+  // }
   
 
 
