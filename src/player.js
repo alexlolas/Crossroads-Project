@@ -2,8 +2,8 @@
 
 const DEFAULTS = {
     color: "green",
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
   }
 export default class Player {
   
@@ -12,12 +12,12 @@ export default class Player {
     this.width = DEFAULTS.width;
     this.height = DEFAULTS.height;
     this.x = (canvas2.width - this.width) / 2
-    this.y = (canvas2.height - this.height) - 20
+    this.y = (canvas2.height - this.height) - 5
      this.moves = {
-        w: [0, -80],
-        a: [-80, 0],
-        s: [0, 80],
-        d: [80, 0],
+        w: [0, -65],
+        a: [-65, 0],
+        s: [0, 65],
+        d: [65, 0],
 
       };
   }

@@ -9,9 +9,14 @@ export default class Game {
     this.values = this.obstacleInt.obstacles(canvas2)
     
     // this.obstacleInt.handleObstacles(this.values, ctx)
-   
-    
   }
+  // handleObstacles(arr, ctx2, canvas) {
+  //   for (let i = 0; i < arr.length; i++) {
+  //     arr[i].moveObject(canvas)
+  //     arr[i].draw(ctx2)
+  //   }
+  // }
+    
 
   
   }

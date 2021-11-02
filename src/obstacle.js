@@ -31,12 +31,16 @@ export default class Obstacle {
 
   moveObject (canvas) {
     this.x += this.vel * this.speed
-    console.log(this.x)
     if (this.speed > 0) {
     if (this.x > canvas.width + this.width) {
       this.x = 0 - this.width
+    } 
+    }else {
+      if (this.x < 0 - this.width) {
+        this.x = canvas.width
+      }
     }
-  }
+  
     
   }
 
@@ -50,11 +54,45 @@ export default class Obstacle {
     let arrs = []
    for (let i = 0; i < 2; i++) {
       let x = i * 350;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 50 * 2 - 20, 50, 50, 2, 1))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 2 - 10, 100, 65, 1, .5))
       
       
     }
+
+    for (let i = 0; i < 2; i++) {
+      let x = i * 300;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 3 - 17, 100, 65, -1, .5))
+
+
+    }
     
+    for (let i = 0; i < 2; i++) {
+      let x = i * 250;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 57 * 4 - 20, 100, 65, 1, .5))
+
+
+    }
+
+    for (let i = 0; i < 2; i++) {
+      let x = i * 400;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 65 * 5 - 40, 100, 65, -1, .5))
+
+
+    }
+
+    for (let i = 0; i < 2; i++) {
+      let x = i * 375;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 65 * 8 - 50, 150, 65, 1, .5))
+
+
+    }
+
+    for (let i = 0; i < 3; i++) {
+      let x = i * 250;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 66 * 9 - 50, 100, 65, -1, .5))
+
+
+    }
     return arrs
   }
 
