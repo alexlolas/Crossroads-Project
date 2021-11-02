@@ -1,24 +1,5 @@
-const OBSTACLES = {
-  height: 50,
-  width: 50,
-  color: 'red',
-  vel: 1,
-  speed: 2
-}
-
 
 export default class Obstacle {
-  // constructor(canvas2) {
-   
-  //   this.height = OBSTACLES.height;
-  //   this.width = OBSTACLES.width;
-  //   this.color = OBSTACLES.color;
-  //   this.vel = OBSTACLES.vel;
-  //   this.x = canvas2.width 
-  //   this.y = canvas2.height - this.height - 90;
-  //   this.speed = OBSTACLES.speed
-  //   this.obstacleArr = []
-  // }
 
   constructor(x, y, width, height, speed, vel) {
     this.y = y
@@ -54,44 +35,42 @@ export default class Obstacle {
     let arrs = []
    for (let i = 0; i < 2; i++) {
       let x = i * 350;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 2 - 10, 100, 65, 1, .5))
-      
-      
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 57 * 2 - 10, 100, 43, 1, .5))   
     }
 
     for (let i = 0; i < 2; i++) {
-      let x = i * 300;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 3 - 17, 100, 65, -1, .5))
-
-
+      let x = i * 550;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 52 * 3 - 17, 300, 43, -1, .5))
     }
     
     for (let i = 0; i < 2; i++) {
       let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 57 * 4 - 20, 100, 65, 1, .5))
-
-
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 54 * 5 - 20, 100, 43, 1, .5))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 400;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 65 * 5 - 40, 100, 65, -1, .5))
-
-
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 59 * 5 - 40, 100, 43, -1, .5))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 375;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 65 * 8 - 50, 150, 65, 1, .5))
-
-
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 61 * 6 - 50, 150, 35, 1, .5))
     }
 
     for (let i = 0; i < 3; i++) {
       let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 66 * 9 - 50, 100, 65, -1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 59 * 7 - 49, 150, 35, -1, .5))
+    }
 
+    for (let i = 0; i < 2; i++) {
+      let x = i * 350;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 62 * 9 - 40, 100, 40, 1, .5))
+    }
 
+    for (let i = 0; i < 2; i++) {
+      let x = i * 500;
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 10 - 42, 300, 40, -1, .5))
     }
     return arrs
   }

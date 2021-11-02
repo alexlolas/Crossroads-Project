@@ -1,10 +1,7 @@
-// import Player from "./player.js"
-import Game from "./game"
-import Obstacle from "./obstacle"
 
-// import BoardView from "./board_view.js"
+import Game from "./game"
+
 //webpack --watch --mode=development
-// make sure this works and then try to condense code after
 // document.addEventListener("DOMContentLoaded", () => {
   
 const canvas1 = document.getElementById("canvas1");
@@ -41,8 +38,6 @@ function clearOld () {
   ctx2.fillStyle = 'white'
   // ctx2.fillRect(canvas2.width, canvas2.height, 700, 700)
   newGame.player.draw(ctx2)
-  // obstacles(arr, canvas2)
-  // console.log(newGame.arr)
   newGame.handleObstacles(newGame.values, ctx2, canvas2)
   requestAnimationFrame(clearOld)
 }

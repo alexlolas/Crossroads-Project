@@ -21,7 +21,7 @@
 }
 
 #canvas2 {
-  background-color: white;
+  background: url("background.png");
   position: absolute;
   top: 0;
   left: 0;

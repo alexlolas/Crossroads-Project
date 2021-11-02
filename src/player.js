@@ -14,10 +14,10 @@ export default class Player {
     this.x = (canvas2.width - this.width) / 2
     this.y = (canvas2.height - this.height) - 5
      this.moves = {
-        w: [0, -65],
-        a: [-65, 0],
-        s: [0, 65],
-        d: [65, 0],
+        w: [0, -43],
+        a: [-43, 0],
+        s: [0, 43],
+        d: [43, 0],
 
       };
   }
