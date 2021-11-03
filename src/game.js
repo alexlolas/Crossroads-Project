@@ -77,11 +77,11 @@ export default class Game {
       this.player.x = (canvas.width - this.player.width) / 2
       this.player.y = (canvas.height - this.player.height) - 5
         for (let i = 0; i < this.cars.length; i++) {
-          this.cars[i].vel += .5
+          this.cars[i].vel += .4
           
         }
       for (let i = 0; i < this.logs.length; i++) {
-        this.logs[i].vel += .5
+        this.logs[i].vel += .4
 
       }
     }

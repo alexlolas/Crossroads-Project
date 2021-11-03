@@ -28,8 +28,6 @@ export default class Player {
   
   draw(ctx2) {
  
-    ctx2.fillStyle = this.color
-    ctx2.fillRect(this.x, this.y, this.width, this.height)
     ctx2.drawImage(FROG, this.spriteX * 250, this.spriteY * 250, 250, 250, this.x - 26, this.y - 26, this.width * 3, this.height * 3 )
     }
 

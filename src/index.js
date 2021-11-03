@@ -52,8 +52,6 @@ document.addEventListener('keydown', (e) => {
 
 document.addEventListener('keyup', (e) => {
   newGame.player.spriteX = 0
-  // newGame.player.spriteY = 0
-
 })
 
 
