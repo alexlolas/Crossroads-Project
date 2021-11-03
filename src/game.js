@@ -30,35 +30,37 @@ export default class Game {
       arr[i].draw(ctx2);
     }
     if (arr[0].type === 'car') {
-    for (let i = 0; i < arr.length; i++) {
-      if (this.collisionTest(this.player, arr[i])) {
+      for (let i = 0; i < arr.length; i++) {
+        if (this.collisionTest(this.player, arr[i])) {
   
-        this.player.x = (canvas.width - this.player.width) / 2
-        this.player.y = (canvas.height - this.player.height) - 5
+          this.player.x = (canvas.width - this.player.width) / 2
+          this.player.y = (canvas.height - this.player.height) - 5
+        }
+      } 
+   } 
+    
+  if (arr[0].type === 'log') {
+    if (this.player.y < 310 && this.player.y > 237) {
+      let inRiver = false
+        for (let i = 0; i < arr.length; i++) {
+          if (this.collisionTest(this.player, arr[i])) {
+            if (arr[i].speed > 0) {
+            this.player.x -= .3
+            inRiver = true
+            
+          } else {
+            this.player.x += .3
+            inRiver = true
+          }
 
-      }
-    } 
-  } 
-    if (arr[0].type === 'log') {
-  if (this.player.y < 326 && this.player.y > 237) {
-    let inRiver = false
-    for (let i = 0; i < arr.length; i++) {
-      if (this.collisionTest(this.player, arr[i])) {
-        this.player.x += arr[i].speed
-        inRiver = true
-
+          }
+         }
+        if (!inRiver) {
+          this.player.x = (canvas.width - this.player.width) / 2
+          this.player.y = (canvas.height - this.player.height) - 5    
+         }
       }
     }
-    if (!inRiver) {
-   
-        this.player.x = (canvas.width - this.player.width) / 2
-        this.player.y = (canvas.height - this.player.height) - 5
-
-      
-    }
-  }
-}
-
   }
   
   
@@ -78,6 +80,10 @@ export default class Game {
           this.cars[i].vel += .5
           
         }
+      for (let i = 0; i < this.logs.length; i++) {
+        this.logs[i].vel += .5
+
+      }
     }
    
   }

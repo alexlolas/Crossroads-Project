@@ -1,9 +1,11 @@
 
+const FROG = new Image()
+FROG.src = 'frog.png'
 
 const DEFAULTS = {
     color: "green",
-    width: 25,
-    height: 25,
+    width: 26,
+    height: 26,
   }
 export default class Player {
   
@@ -20,11 +22,15 @@ export default class Player {
         d: [43, 0],
 
       };
+      this.spriteX = 0
+      this.spriteY = 0
   }
   
   draw(ctx2) {
+ 
     ctx2.fillStyle = this.color
     ctx2.fillRect(this.x, this.y, this.width, this.height)
+    ctx2.drawImage(FROG, this.spriteX * 250, this.spriteY * 250, 250, 250, this.x - 26, this.y - 26, this.width * 3, this.height * 3 )
     }
 
     
