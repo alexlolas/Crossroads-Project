@@ -9,7 +9,7 @@
 }
 
 .wrap {
-  border: 5px solid blue;
+  // border: 5px solid blue;
   // background-color: white;
 
   top: 50%;
@@ -21,8 +21,8 @@
 }
 
 #canvas2 {
-  // background-color: white;
-    background: url('background.png');
+  background-color: white;
+    // background-image: url('background2.png');
   position: absolute;
   top: 0;
   left: 0;

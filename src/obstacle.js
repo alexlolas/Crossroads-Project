@@ -1,6 +1,7 @@
 
+const CARS = new Image()
+CARS.src = 'cars.png'
 export default class Obstacle {
-
   constructor(x, y, width, height, speed, vel) {
     this.y = y
     this.x = x;
@@ -8,6 +9,7 @@ export default class Obstacle {
     this.height = height
     this.speed = speed
     this.vel = vel
+    this.frameX = 0
   }
 
   moveObject (canvas) {
@@ -20,14 +22,16 @@ export default class Obstacle {
       if (this.x < 0 - this.width) {
         this.x = canvas.width
       }
-    }
-  
-    
+    } 
   }
 
   draw(ctx2) {
-    ctx2.fillStyle = 'red'
+    // console.log(CARS)
+    // ctx2.fillStyle = 'red'
     ctx2.fillRect(this.x, this.y, this.width, this.height)
+    console.log(this)
+    // ctx2.drawImage(CARS, 0 * this.width, this.height, 80, 20, this.x,
+    //   this.y, this.width, this.height)
     
   }
 

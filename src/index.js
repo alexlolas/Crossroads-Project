@@ -23,21 +23,18 @@ const canvas1 = document.getElementById("canvas1");
 
 document.addEventListener('keydown', (e) => {
   let dir = newGame.player.moves[e.key]
-  if ((newGame.player.x + dir[0]) < canvas2.width && newGame.player.x +dir[0] > 0 && newGame.player.y + dir[1] < canvas2.height && newGame.player.y + dir[1] > 0) {
+  if ((newGame.player.x + dir[0]) < canvas2.width && newGame.player.x +dir[0] > 0 && newGame.player.y + dir[1] < canvas2.height){
     newGame.player.x = newGame.player.x += dir[0]
     newGame.player.y = newGame.player.y += dir[1]
   }
 
 })
 
-console.log()
-
-
 function clearOld () {
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
   ctx2.fillStyle = 'white'
-  // ctx2.fillRect(canvas2.width, canvas2.height, 700, 700)
   newGame.player.draw(ctx2)
+  newGame.levelUp(canvas2)
   newGame.handleObstacles(newGame.values, ctx2, canvas2)
   requestAnimationFrame(clearOld)
 }
