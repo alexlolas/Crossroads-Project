@@ -30,10 +30,13 @@ export default class Game {
   }
 
   levelUp(canvas) {
+   
     if (this.player.y <= 20) {
       this.player.x = (canvas.width - this.player.width) / 2
       this.player.y = (canvas.height - this.player.height) - 5
+      
     }
+   
   }
     
 

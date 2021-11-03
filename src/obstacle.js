@@ -1,14 +1,21 @@
 
 const CARS = new Image()
 CARS.src = 'cars.png'
+
+const LOG = new Image()
+LOG.src = 'log.png'
+
+const TRAIN = new Image() 
+TRAIN.src = 'train.jpg'
 export default class Obstacle {
-  constructor(x, y, width, height, speed, vel) {
+  constructor(x, y, width, height, speed, vel, type) {
     this.y = y
     this.x = x;
     this.width = width
     this.height = height
     this.speed = speed
     this.vel = vel
+    this.type = type
     this.frameX = 0
   }
 
@@ -28,53 +35,61 @@ export default class Obstacle {
   draw(ctx2) {
     // console.log(CARS)
     // ctx2.fillStyle = 'red'
-    ctx2.fillRect(this.x, this.y, this.width, this.height)
-    console.log(this)
-    // ctx2.drawImage(CARS, 0 * this.width, this.height, 80, 20, this.x,
-    //   this.y, this.width, this.height)
-    
+    // ctx2.fillRect(this.x, this.y, this.width, this.height)
+    // console.log(this)
+    if (this.type === 'car' || this.type === 'train') {
+    ctx2.drawImage(CARS, 0, 0, 160, 75, this.x,
+      this.y, this.width, this.height)
+    } else if (this.type === 'log') {
+      ctx2.drawImage(LOG, 0, 0, 160, 62, this.x,
+        this.y, this.width, this.height)
+     } 
+    //  else {
+    //   ctx2.drawImage(TRAIN, 0, 0, 250, 50, this.x,
+    //     this.y, this.width, this.height)
+    // }
   }
 
   obstacles(canvas2){
     let arrs = []
    for (let i = 0; i < 2; i++) {
       let x = i * 350;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 57 * 2 - 10, 100, 43, 1, .5))   
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 2 - 10, 135, 50, 1, .5, 'car'))   
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 550;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 52 * 3 - 17, 300, 43, -1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 52 * 3 - 17, 75, 43, -1, .5, 'train'))
     }
     
     for (let i = 0; i < 2; i++) {
       let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 54 * 5 - 20, 100, 43, 1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 56 * 5 - 19, 135, 50, 1, .5, 'car'))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 400;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 59 * 5 - 40, 100, 43, -1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 5 - 40, 135, 50, -1, .5, 'car'))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 375;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 61 * 6 - 50, 150, 35, 1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 62 * 6 - 56, 150, 40, 1, .5, 'log'))
     }
 
     for (let i = 0; i < 3; i++) {
       let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 59 * 7 - 49, 150, 35, -1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 7 - 50, 150, 40, -1, .5, 'log'))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 350;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 62 * 9 - 40, 100, 40, 1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 62 * 9 - 48, 140, 50, 1, .5, 'car'))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 500;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 10 - 42, 300, 40, -1, .5))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 10 - 42, 300, 40, -1, .5, 'train'))
     }
     return arrs
   }

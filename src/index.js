@@ -34,7 +34,9 @@ function clearOld () {
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
   ctx2.fillStyle = 'white'
   newGame.player.draw(ctx2)
+  // console.log(newGame.obstacleInt.vel)
   newGame.levelUp(canvas2)
+  console.log(newGame)
   newGame.handleObstacles(newGame.values, ctx2, canvas2)
   requestAnimationFrame(clearOld)
 }
