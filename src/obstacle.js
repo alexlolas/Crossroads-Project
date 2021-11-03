@@ -47,7 +47,7 @@ export default class Obstacle {
      } 
   }
 
-  obstacles(canvas2){
+  dangerousObstacles(canvas2){
     let arrs = []
    for (let i = 0; i < 2; i++) {
       let x = i * 350;
@@ -61,22 +61,12 @@ export default class Obstacle {
     
     for (let i = 0; i < 2; i++) {
       let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 5 - 19, 135, 50, 1, .5, 'car'))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 5 - 22, 135, 50, 1, .5, 'car'))
     }
 
     for (let i = 0; i < 2; i++) {
       let x = i * 400;
       arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 5 - 40, 135, 50, -1, .5, 'car'))
-    }
-
-    for (let i = 0; i < 2; i++) {
-      let x = i * 375;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 62 * 6 - 56, 150, 40, 1, .5, 'log'))
-    }
-
-    for (let i = 0; i < 3; i++) {
-      let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 7 - 50, 150, 40, -1, .5, 'log'))
     }
 
     for (let i = 0; i < 2; i++) {
@@ -89,6 +79,20 @@ export default class Obstacle {
       arrs = arrs.concat(new Obstacle(x, canvas2.height - 60 * 10 - 42, 300, 40, -1, .5, 'train'))
     }
     return arrs
+  }
+
+  friendlyObstacles(canvas2) {
+    let friendly = []
+    for (let i = 0; i < 2; i++) {
+      let x = i * 375;
+      friendly = friendly.concat(new Obstacle(x, canvas2.height - 62 * 6 - 56, 150, 40, 1, .5, 'log'))
+    }
+
+    for (let i = 0; i < 3; i++) {
+      let x = i * 250;
+      friendly = friendly.concat(new Obstacle(x, canvas2.height - 60 * 7 - 50, 150, 40, -1, .5, 'log'))
+    }
+    return friendly
   }
 
 
