@@ -16,7 +16,8 @@ export default class Obstacle {
     this.speed = speed
     this.vel = vel
     this.type = type
-    this.frameX = 0
+    this.randCar = (Math.floor(Math.random() * 3))
+    this.reverse = 0
   }
 
   moveObject (canvas) {
@@ -27,27 +28,23 @@ export default class Obstacle {
     } 
     }else {
       if (this.x < 0 - this.width) {
+        this.reverse += 1
         this.x = canvas.width
       }
     } 
   }
 
   draw(ctx2) {
-    // console.log(CARS)
-    // ctx2.fillStyle = 'red'
-    // ctx2.fillRect(this.x, this.y, this.width, this.height)
-    // console.log(this)
+    if (this.speed < 0) {
+      this.reverse = 1
+    }
     if (this.type === 'car' || this.type === 'train') {
-    ctx2.drawImage(CARS, 0, 0, 160, 75, this.x,
+    ctx2.drawImage(CARS,  this.reverse * 160,  this.randCar * 80, 160, 80, this.x,
       this.y, this.width, this.height)
     } else if (this.type === 'log') {
       ctx2.drawImage(LOG, 0, 0, 160, 62, this.x,
         this.y, this.width, this.height)
      } 
-    //  else {
-    //   ctx2.drawImage(TRAIN, 0, 0, 250, 50, this.x,
-    //     this.y, this.width, this.height)
-    // }
   }
 
   obstacles(canvas2){
@@ -64,7 +61,7 @@ export default class Obstacle {
     
     for (let i = 0; i < 2; i++) {
       let x = i * 250;
-      arrs = arrs.concat(new Obstacle(x, canvas2.height - 56 * 5 - 19, 135, 50, 1, .5, 'car'))
+      arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 5 - 19, 135, 50, 1, .5, 'car'))
     }
 
     for (let i = 0; i < 2; i++) {
