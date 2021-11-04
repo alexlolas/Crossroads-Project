@@ -74,6 +74,24 @@ export default class Game {
     }
     return status
   }
+
+  resetGame(canvas) {
+    this.level = 1
+    this.numLives = 3
+    for (let i = 0; i < this.cars.length; i++) {
+      this.cars[i].vel = .5
+
+    }
+    for (let i = 0; i < this.logs.length; i++) {
+      this.logs[i].vel = .5
+
+    }
+    this.player.x = (canvas.width - this.player.width) / 2
+    this.player.y = (canvas.height - this.player.height) - 5
+    this.player.spriteY = 0
+    this.player.spriteX = 0
+
+  }
   
   
 

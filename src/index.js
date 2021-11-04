@@ -16,6 +16,9 @@ const ctx3 = canvas3.getContext('2d');
 const canvas4 = document.getElementById("canvas4");
 const ctx4 = canvas3.getContext('2d');
 const newGame = new Game(canvas2, ctx2)
+
+const resetGame = document.getElementById('restart-game')
+resetGame.addEventListener('click', newGame.resetGame.bind(newGame, canvas2));
  
   // ctx3.fillStyle = 'white'
   // ctx3.fillRect(0, 150, 250, 300)
@@ -25,6 +28,7 @@ function gameState() {
   ctx3.fillStyle = 'black'
   ctx3.font = '24px Courier'
   ctx3.fillText('Lives:', 10, 180)
+  ctx3.fillText('𝓕𝓻𝓸𝓰𝓰𝓮𝓻 2.0', 10, 50)
   ctx3.fillText(newGame.numLives, 120, 180)
   ctx3.fillText('Level:', 10, 100)
   ctx3.fillText(newGame.level, 120, 100)
@@ -65,6 +69,7 @@ function title() {
     canvas1.height = window.innerHeight
     ctx2.fillStyle = 'white'
     ctx2.fillRect(canvas2.width, canvas2.height, 700, 700)
+    ctx3.clearRect(0, 0, canvas3.width, canvas3.height)
     newGame.player.draw(ctx2)
   })
 
@@ -104,7 +109,6 @@ document.addEventListener('keyup', (e) => {
 
 
 function clearOld () {
-  ctx.clearRect(0, 0, canvas2.width, canvas2.height)
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
   ctx3.clearRect(0, 0, canvas3.width, canvas3.height)
   gameState()
@@ -114,7 +118,9 @@ function clearOld () {
   newGame.handleObstacles(newGame.cars, ctx2, canvas2)
   newGame.handleObstacles(newGame.logs, ctx2, canvas2)
   newGame.player.draw(ctx2)
-  newGame.gameOver()
+  if (newGame.gameOver(canvas2)) {
+      newGame.resetGame(canvas2, ctx2)
+  }
   requestAnimationFrame(clearOld)
 }
 clearOld()
