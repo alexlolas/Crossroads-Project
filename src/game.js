@@ -8,6 +8,8 @@ export default class Game {
     this.cars = this.obstacleInt.dangerousObstacles(canvas2);
     this.logs = this.obstacleInt.friendlyObstacles(canvas2);
     this.speed = .5
+    this.numLives = 3
+    this.level = 1
   }
 
 //  moveObject (canvas) {
@@ -33,6 +35,7 @@ export default class Game {
       for (let i = 0; i < arr.length; i++) {
         if (this.collisionTest(this.player, arr[i])) {
   
+          this.numLives -= 1
           this.player.x = (canvas.width - this.player.width) / 2
           this.player.y = (canvas.height - this.player.height) - 5
         }
@@ -58,9 +61,18 @@ export default class Game {
         if (!inRiver) {
           this.player.x = (canvas.width - this.player.width) / 2
           this.player.y = (canvas.height - this.player.height) - 5    
+          this.numLives -= 1
          }
       }
     }
+  }
+
+  gameOver() {
+    let status = false
+    if (this.numLives === 0) {
+        status = true
+    }
+    return status
   }
   
   
@@ -74,14 +86,15 @@ export default class Game {
 
   levelUp(canvas) {
     if (this.player.y <= 20) {
+      this.level += 1
       this.player.x = (canvas.width - this.player.width) / 2
       this.player.y = (canvas.height - this.player.height) - 5
         for (let i = 0; i < this.cars.length; i++) {
-          this.cars[i].vel += .4
+          this.cars[i].vel += .5
           
         }
       for (let i = 0; i < this.logs.length; i++) {
-        this.logs[i].vel += .4
+        this.logs[i].vel += .5
 
       }
     }

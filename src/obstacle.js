@@ -5,8 +5,7 @@ CARS.src = 'cars.png'
 const LOG = new Image()
 LOG.src = 'log.png'
 
-const TRAIN = new Image() 
-TRAIN.src = 'train.jpg'
+
 export default class Obstacle {
   constructor(x, y, width, height, speed, vel, type) {
     this.y = y
@@ -60,7 +59,7 @@ export default class Obstacle {
     }
     
     for (let i = 0; i < 2; i++) {
-      let x = i * 250;
+      let x = i * 325;
       arrs = arrs.concat(new Obstacle(x, canvas2.height - 55 * 5 - 22, 120, 50, 1, .5, 'car'))
     }
 

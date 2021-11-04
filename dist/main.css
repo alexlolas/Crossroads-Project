@@ -25,3 +25,18 @@
   top: 0;
   left: 0;
 }
+
+#canvas3 {
+  background-color: #a9dce3;
+  top: 50%;
+  left: 55%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#canvas4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
