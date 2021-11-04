@@ -1,7 +1,4 @@
 # Crossroads-Project
-
-working game: https://alexlolas.github.io/Crossroads-Project/
-
 Background:
 In my Crossroads game, I am going to be taking inspiration from an app called 
 Crossy-Roads and a more classic game known as Frogger. The basis of the game is 
